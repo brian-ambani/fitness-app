@@ -1,9 +1,9 @@
-function App() {
+import "./App.css";
+const App = () => {
   return (
-    <>
-      <h1>Hello react</h1>
-    </>
+    <div>
+      <h1>Hello World</h1>
+    </div>
   );
-}
-
+};
 export default App;
