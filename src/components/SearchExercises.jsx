@@ -1,5 +1,15 @@
 import { Box, Button, Stack, TextField, Typography } from "@mui/material";
+import { useState } from "react";
+
 const SearchExercises = () => {
+  const [search, setSearch] = useState("");
+
+  const handleSearch = async () => {
+    if (search) {
+      // const exerciseData = await fetchData();
+    }
+  };
+
   return (
     <Stack alignItems="center" mt="37px" justifyContent="center" p="20px">
       <Typography
@@ -20,8 +30,8 @@ const SearchExercises = () => {
             borderRadius: "40px",
           }}
           height="70px"
-          value=""
-          onChange={() => {}}
+          value={search}
+          onChange={(e) => setSearch(e.target.value.toLowerCase())}
           placeholder="Search Exercises"
           type="text"
         />
@@ -37,6 +47,7 @@ const SearchExercises = () => {
             position: "absoulute",
             right: "0",
           }}
+          onClick={handleSearch}
         >
           Search
         </Button>
