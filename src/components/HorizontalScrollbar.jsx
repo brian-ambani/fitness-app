@@ -2,12 +2,12 @@ import { useContext } from "react";
 import { ScrollMenu, VisibilityContext } from "react-horizontal-scrolling-menu";
 import { Box, Typography } from "@mui/material";
 
-import PropTypes from "prop-types";
-
 import ExerciseCard from "./ExerciseCard";
 import BodyPart from "./BodyPart";
 import RightArrowIcon from "../assets/icons/right-arrow.png";
 import LeftArrowIcon from "../assets/icons/left-arrow.png";
+
+import PropTypes from "prop-types";
 
 const LeftArrow = () => {
   const { scrollPrev } = useContext(VisibilityContext);
@@ -49,9 +49,10 @@ const HorizontalScrollbar = ({ data, bodyParts, setBodyPart, bodyPart }) => (
 );
 
 HorizontalScrollbar.propTypes = {
-  data: PropTypes.array.isRequired,
-  bodyPart: PropTypes.string.isRequired,
-  setBodyPart: PropTypes.func.isRequired,
+  data: PropTypes.arrayOf(PropTypes.object).isRequired,
+  bodyParts: PropTypes.bool,
+  setBodyPart: PropTypes.func,
+  bodyPart: PropTypes.string,
 };
 
 export default HorizontalScrollbar;
